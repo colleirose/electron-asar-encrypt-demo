@@ -8,11 +8,11 @@
 extern "C" {
 #endif
 
-size_t base64_encode(const uint8_t* src, size_t len, char* dst);
-size_t base64_decode(const char* src, size_t len, uint8_t* dst);
+size_t base64_encode(const uint8_t *src, size_t len, char *dst);
+size_t base64_decode(const char *src, size_t len, uint8_t *dst);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif  // SRC_BASE64_H_
+#endif // SRC_BASE64_H_

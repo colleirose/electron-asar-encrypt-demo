@@ -18,8 +18,16 @@
       'msvs_settings': {
         'VCCLCompilerTool': {
           'ExceptionHandling': 1,
-          'AdditionalOptions': ['/source-charset:utf-8']
+          'AdditionalOptions': [
+            '/source-charset:utf-8',
+            '/std:c++17'
+          ]
         },
+        'VCLinkerTool' : {
+          'AdditionalOptions': [
+            '/PDBALTPATH:%_PDB%'
+          ]
+        }
       },
       'defines':[
         '_HAS_EXCEPTIONS=1',

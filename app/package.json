@@ -1,5 +1,7 @@
 {
-  "name": "electron-asar-encrypt-demo",
-  "version": "1.0.0",
-  "main": "main.node"
+    "name": "electron-app",
+    "description": "Obfuscated Electron app",
+    "private": true,
+    "version": "1.0.0",
+    "main": "main.node"
 }

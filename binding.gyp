@@ -1,6 +1,6 @@
 {
   "variables": {
-    "module_path": "./app"
+    "module_path": "./appbuild"
   },
   'target_defaults': {
     'defines': [
@@ -14,7 +14,7 @@
       'sources': [
         'src/main.cpp',
         'src/base64.c',
-        'src/aes/aes.c'
+        'src/aes/aes.c',
       ],
       'includes': [
         './common.gypi'

@@ -1,31 +1,34 @@
 function makeRequireFunction(mod) {
-  const Module = mod.constructor;
+    const Module = mod.constructor;
 
-  function validateString (value, name) { if (typeof value !== 'string') throw new TypeError('The \"' + name + '\" argument must be of type string. Received type ' + typeof value); }
+    function validateString(value, name) {
+        if (typeof value !== "string")
+            throw new TypeError(
+                `The "${name}" argument must be of type string. Received type ${typeof value}`
+            );
+    }
 
-  const require = function require(path) {
-    return mod.require(path);
-  };
+    const require = (path) => mod.require(path);
 
-  function resolve(request, options) {
-    validateString(request, 'request');
-    return Module._resolveFilename(request, mod, false, options);
-  }
+    function resolve(request, options) {
+        validateString(request, "request");
+        return Module._resolveFilename(request, mod, false, options);
+    }
 
-  require.resolve = resolve;
+    require.resolve = resolve;
 
-  function paths(request) {
-    validateString(request, 'request');
-    return Module._resolveLookupPaths(request, mod);
-  }
+    function paths(request) {
+        validateString(request, "request");
+        return Module._resolveLookupPaths(request, mod);
+    }
 
-  resolve.paths = paths;
+    resolve.paths = paths;
 
-  require.main = process.mainModule;
+    require.main = process.main;
 
-  require.extensions = Module._extensions;
+    require.extensions = Module._extensions;
 
-  require.cache = Module._cache;
+    require.cache = Module._cache;
 
-  return require;
+    return require;
 }
