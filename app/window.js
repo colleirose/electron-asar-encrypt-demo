@@ -55,20 +55,6 @@ class WindowManager {
             win.webContents.openDevTools();
         });
 
-        win.on("close", (event) => {
-            // Prevents the app from being closed so that it will run in the background
-            event.preventDefault();
-            win.hide();
-
-            return false;
-        });
-
-        win.on("minimize", function (event) {
-            // Prevents the app from being closed so that it will run in the background
-            event.preventDefault();
-            win.hide();
-        });
-
         win.on("closed", () => {
             win = null;
             this.windows.delete(name);
